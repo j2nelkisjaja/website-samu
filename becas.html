@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Becas | ITLA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --itla-blue: #003366;
+      --itla-dark: #001f3f;
+      --itla-red: #cc0000;
+      --itla-light-blue: #0d6efd;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .navbar {
+      border-bottom: 5px solid var(--itla-red);
+    }
+
+    .navbar-brand img {
+      height: 58px;
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 8px 10px !important;
+      color: #333 !important;
+    }
+
+    .nav-link:hover {
+      color: var(--itla-red) !important;
+    }
+
+    .nav-link.active-page {
+      background-color: var(--itla-red);
+      color: white !important;
+      border-radius: 4px;
+    }
+
+    .hero-becas {
+      min-height: 520px;
+      background: radial-gradient(circle at top left, #0d6efd 0%, #003366 35%, #001a33 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-becas::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      top: -120px;
+      right: -100px;
+    }
+
+    .hero-becas::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
+      bottom: -100px;
+      left: -70px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .hero-title span {
+      color: #ffde59;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.20);
+    }
+
+    .btn-beca {
+      border: 2px solid white;
+      color: white;
+      font-weight: bold;
+      padding: 12px 28px;
+      border-radius: 0;
+      text-transform: uppercase;
+      transition: 0.25s;
+    }
+
+    .btn-beca:hover {
+      background-color: white;
+      color: var(--itla-blue);
+      transform: translateY(-3px);
+    }
+
+    .section-title {
+      font-weight: 900;
+      color: var(--itla-blue);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .red-line {
+      width: 80px;
+      height: 4px;
+      background-color: var(--itla-red);
+      margin: 0 auto 40px;
+      border-radius: 20px;
+    }
+
+    .beca-card {
+      background: white;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .beca-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+    }
+
+    .beca-card-header {
+      background: linear-gradient(135deg, #003366, #0d6efd);
+      color: white;
+      padding: 30px;
+    }
+
+    .beca-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .step-box {
+      background: white;
+      border-left: 5px solid var(--itla-red);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      height: 100%;
+    }
+
+    .form-section {
+      background: linear-gradient(135deg, #001a33, #003366);
+      color: white;
+    }
+
+    .form-card {
+      background: white;
+      color: #333;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+    }
+
+    .btn-itla {
+      background-color: var(--itla-red);
+      color: white;
+      border: none;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 50px;
+    }
+
+    .btn-itla:hover {
+      background-color: var(--itla-blue);
+      color: white;
+    }
+
+    footer {
+      background-color: var(--itla-blue);
+      color: white;
+    }
+
+    footer h6 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .hero-becas {
+        min-height: auto;
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-xl navbar-light bg-white sticky-top shadow-sm">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/itla logo.png" alt="Logo ITLA">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center align-items-xl-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="admisiones.html">Admisiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="rectoria.html">Rectoría</a></li>
+          <li class="nav-item"><a class="nav-link" href="organigrama.html">Organigrama</a></li>
+          <li class="nav-item"><a class="nav-link active-page" href="becas.html">Becas</a></li>
+          <li class="nav-item"><a class="nav-link" href="normativa-academica.html">Normativas Académicas</a></li>
+          <li class="nav-item"><a class="nav-link" href="cafe-digital.html">Café Digital</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-becas">
+    <div class="container hero-content">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-7">
+          <span class="hero-badge">
+            <i class="bi bi-stars me-2"></i>Oportunidades para tu futuro
+          </span>
+
+          <h1 class="hero-title">BECAS <span>ITLA</span></h1>
+
+          <p class="lead mt-3 mb-4">
+            Programas de apoyo académico diseñados para que más jóvenes puedan acceder
+            a una formación tecnológica de calidad y desarrollar su talento profesional.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#superior" class="btn btn-beca">Becas Educación Superior</a>
+            <a href="#continua" class="btn btn-beca">Becas Educación Continua</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-card">
+            <h3 class="fw-bold mb-3">¿Por qué aplicar?</h3>
+            <p class="mb-4">
+              Las becas permiten que estudiantes con vocación tecnológica puedan continuar sus estudios,
+              reducir costos y acceder a mejores oportunidades académicas.
+            </p>
+
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="p-3 bg-white bg-opacity-10 rounded text-center">
+                  <i class="bi bi-mortarboard fs-2"></i>
+                  <p class="fw-bold mb-0 mt-2">Formación</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="p-3 bg-white bg-opacity-10 rounded text-center">
+                  <i class="bi bi-laptop fs-2"></i>
+                  <p class="fw-bold mb-0 mt-2">Tecnología</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="p-3 bg-white bg-opacity-10 rounded text-center">
+                  <i class="bi bi-people fs-2"></i>
+                  <p class="fw-bold mb-0 mt-2">Inclusión</p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="p-3 bg-white bg-opacity-10 rounded text-center">
+                  <i class="bi bi-graph-up-arrow fs-2"></i>
+                  <p class="fw-bold mb-0 mt-2">Crecimiento</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOS DE BECAS -->
+  <section class="container py-5">
+    <h2 class="section-title">Tipos de Becas</h2>
+    <div class="red-line"></div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6" id="superior">
+        <div class="beca-card">
+          <div class="beca-card-header">
+            <div class="beca-icon">
+              <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <h3 class="fw-bold">Becas Educación Superior</h3>
+            <p class="mb-0">
+              Dirigidas a estudiantes interesados en realizar carreras tecnológicas de nivel superior.
+            </p>
+          </div>
+
+          <div class="card-body p-4">
+            <h5 class="fw-bold text-primary">Incluye:</h5>
+            <ul class="text-secondary">
+              <li>Apoyo para programas académicos de formación tecnológica.</li>
+              <li>Acceso a oportunidades de desarrollo profesional.</li>
+              <li>Orientación durante el proceso de solicitud.</li>
+              <li>Posibilidad de integrarse a áreas de alta demanda laboral.</li>
+            </ul>
+            <a href="#formulario" class="btn btn-itla mt-3">Solicitar Información</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" id="continua">
+        <div class="beca-card">
+          <div class="beca-card-header" style="background: linear-gradient(135deg, #cc0000, #003366);">
+            <div class="beca-icon">
+              <i class="bi bi-journal-code"></i>
+            </div>
+            <h3 class="fw-bold">Becas Educación Continua</h3>
+            <p class="mb-0">
+              Pensadas para cursos, talleres, certificaciones y programas de actualización profesional.
+            </p>
+          </div>
+
+          <div class="card-body p-4">
+            <h5 class="fw-bold text-primary">Incluye:</h5>
+            <ul class="text-secondary">
+              <li>Apoyo para cursos técnicos y tecnológicos.</li>
+              <li>Programas cortos enfocados en habilidades prácticas.</li>
+              <li>Capacitación para mejorar el perfil laboral.</li>
+              <li>Formación continua para estudiantes y profesionales.</li>
+            </ul>
+            <a href="#formulario" class="btn btn-itla mt-3">Solicitar Información</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REQUISITOS -->
+  <section class="container py-5">
+    <h2 class="section-title">Proceso de Solicitud</h2>
+    <div class="red-line"></div>
+
+    <div class="row g-4">
+
+      <div class="col-md-3">
+        <div class="step-box">
+          <span class="badge bg-primary mb-3">Paso 1</span>
+          <h5 class="fw-bold text-primary">Revisar convocatoria</h5>
+          <p class="text-secondary mb-0">
+            Verifica las fechas disponibles y el tipo de beca al que deseas aplicar.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="step-box">
+          <span class="badge bg-primary mb-3">Paso 2</span>
+          <h5 class="fw-bold text-primary">Preparar documentos</h5>
+          <p class="text-secondary mb-0">
+            Organiza tus datos personales, récord académico y documentos solicitados.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="step-box">
+          <span class="badge bg-primary mb-3">Paso 3</span>
+          <h5 class="fw-bold text-primary">Completar formulario</h5>
+          <p class="text-secondary mb-0">
+            Llena el formulario con información clara y actualizada.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="step-box">
+          <span class="badge bg-primary mb-3">Paso 4</span>
+          <h5 class="fw-bold text-primary">Esperar evaluación</h5>
+          <p class="text-secondary mb-0">
+            Tu solicitud será revisada y recibirás seguimiento por los canales oficiales.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="form-section py-5" id="formulario">
+    <div class="container py-4">
+      <div class="row g-5 align-items-center">
+
+        <div class="col-lg-5">
+          <h2 class="fw-bold display-6">Solicita más información</h2>
+          <p class="lead">
+            Completa este formulario para recibir orientación sobre las becas disponibles,
+            requisitos y próximos pasos.
+          </p>
+
+          <div class="mt-4">
+            <p><i class="bi bi-envelope-fill me-2"></i> becas@itla.edu.do</p>
+            <p><i class="bi bi-telephone-fill me-2"></i> (809)-738-4852</p>
+            <p><i class="bi bi-clock-fill me-2"></i> Lunes a viernes | 8:00 a. m. - 4:00 p. m.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="form-card">
+            <form>
+              <div class="row g-3">
+
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Nombre completo</label>
+                  <input type="text" class="form-control" placeholder="Escribe tu nombre">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Correo electrónico</label>
+                  <input type="email" class="form-control" placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Teléfono</label>
+                  <input type="text" class="form-control" placeholder="809-000-0000">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Tipo de beca</label>
+                  <select class="form-select">
+                    <option selected>Seleccione una opción</option>
+                    <option>Beca Educación Superior</option>
+                    <option>Beca Educación Continua</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-bold">Mensaje</label>
+                  <textarea class="form-control" rows="5" placeholder="Escribe tu consulta o interés..."></textarea>
+                </div>
+
+                <div class="col-12 text-end">
+                  <button type="submit" class="btn btn-itla">Enviar Solicitud</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+
+        <div class="col-lg-3 border-end border-light border-opacity-25 pe-lg-5">
+          <img src="img/loguito.webp" alt="ITLA 25 Aniversario" class="img-fluid" style="max-height: 100px;">
+        </div>
+
+        <div class="col-lg-3">
+          <h6>Conócenos</h6>
+          <p>
+            El Instituto Tecnológico de las Américas (ITLA) es una institución educativa de la República Dominicana
+            que ofrece formación técnica y tecnológica en áreas como desarrollo de software, redes y mecatrónica.
+          </p>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Contáctanos</h6>
+          <ul class="list-unstyled">
+            <li>Tel: (809)-738-4852</li>
+            <li>Tel: (809)-793-2557</li>
+            <li>info@itla.edu.do</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Búscanos</h6>
+          <p>
+            Autopista Las Américas, Km. 27, PCSD, La Caleta, Boca Chica 11606, R.D.
+          </p>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Infórmate</h6>
+          <a href="#" class="d-block">Términos de Uso</a>
+          <a href="#" class="d-block">Política de Privacidad</a>
+          <a href="#" class="d-block">Preguntas Frecuentes</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <div class="container-fluid py-4 border-top bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-6 text-center text-md-start">
+          <p class="small mb-0 text-secondary fw-bold">
+            © 2026 Todos los Derechos Reservados.
+          </p>
+        </div>
+
+        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+          <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 text-primary">
+            <span class="fw-bold small">SÍGUENOS</span>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-youtube"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

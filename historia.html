@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Historia | ITLA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --itla-blue: #003366;
+      --itla-red: #cc0000;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #fff;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      border-bottom: 5px solid var(--itla-red);
+      padding: 0.5rem 0;
+      background-color: white;
+    }
+
+    .navbar-brand img {
+      height: 58px;
+      width: auto;
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 8px 10px !important;
+      color: #333 !important;
+      transition: 0.25s;
+    }
+
+    .nav-link:hover {
+      color: var(--itla-red) !important;
+    }
+
+    .nav-link.active-page {
+      background-color: var(--itla-red) !important;
+      color: white !important;
+      border-radius: 4px;
+    }
+
+    /* HEADER */
+    .page-header {
+      background: linear-gradient(90deg, #001a33 0%, #003366 100%);
+      color: white;
+      padding: 65px 0;
+      border-bottom: 6px solid var(--itla-red);
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: "|";
+      color: white;
+    }
+
+    .section-title {
+      color: var(--itla-blue);
+      font-weight: bold;
+      border-left: 5px solid var(--itla-red);
+      padding-left: 15px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-size: 1.35rem;
+    }
+
+    .history-img {
+      border: 1px solid #ddd;
+      padding: 5px;
+      background: white;
+      border-radius: 5px;
+    }
+
+    .history-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 30px;
+      transition: 0.3s ease;
+    }
+
+    .history-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .timeline-badge {
+      background-color: var(--itla-red);
+      color: white;
+      font-weight: bold;
+      padding: 8px 18px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: var(--itla-blue);
+      color: white;
+    }
+
+    footer h6 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        height: 50px;
+      }
+
+      .page-header {
+        padding: 50px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-xl navbar-light sticky-top shadow-sm">
+    <div class="container-fluid px-4">
+
+      <a class="navbar-brand" href="index.html">
+        <img src="img/itla logo.png" alt="Logo ITLA">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center align-items-xl-center">
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="quienes-somos.html">Quiénes Somos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active-page" href="historia.html">Historia</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="admisiones.html">Admisiones</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="rectoria.html">Rectoría</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="organigrama.html">Organigrama</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="becas.html">Becas</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="normativa-academica.html">Normativas Académicas</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="cafe-digital.html">Café Digital</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="fw-bold">Nuestra Historia</h1>
+      <p class="lead mb-3">Evolución, innovación y compromiso con la educación tecnológica dominicana.</p>
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item small">
+            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+          </li>
+          <li class="breadcrumb-item small active text-white-50">Historia</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HISTORIA PRINCIPAL -->
+  <section class="container py-5">
+    <div class="row g-5 align-items-center">
+
+      <div class="col-lg-6">
+        <div class="history-card">
+          <span class="timeline-badge">2000 - 2001</span>
+
+          <h2 class="section-title">Constitución e Inicio Formal</h2>
+
+          <p class="text-secondary" style="line-height: 1.8;">
+            El Instituto Tecnológico de las Américas (ITLA) quedó formalmente constituido como una institución
+            pública mediante el Decreto No. 422-00, de fecha 15 de agosto del año 2000, emitido por el entonces
+            presidente de la República, Dr. Leonel Fernández. La inauguración oficial se llevó a cabo el 13 de
+            agosto de ese mismo año, fecha que se considera como el aniversario institucional.
+          </p>
+
+          <p class="text-secondary" style="line-height: 1.8;">
+            En marzo de 2001, bajo la presidencia de Hipólito Mejía, se concluyó la obra y se dio inicio a las
+            operaciones del ITLA. Durante el periodo 2000-2004, se completó la construcción y equipamiento de
+            cuatro edificios destinados a Redes de Información, Software, Multimedia y Mecatrónica.
+          </p>
+
+          <p class="text-muted mb-0">
+            Su evolución refleja un compromiso constante con la excelencia y la innovación tecnológica.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="img/crecimiento.jpeg" class="img-fluid history-img shadow-sm" alt="Crecimiento ITLA">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DESARROLLO Y CRECIMIENTO -->
+  <section class="py-5 bg-light border-top border-bottom">
+    <div class="container">
+      <div class="row g-5 align-items-center flex-row-reverse">
+
+        <div class="col-lg-6">
+          <div class="history-card">
+            <span class="timeline-badge">2004 - Actualidad</span>
+
+            <h2 class="section-title">Crecimiento Académico</h2>
+
+            <p class="text-secondary" style="line-height: 1.8;">
+              En 2004, gracias a una donación del gobierno de Taiwán, se inauguró el centro de Mecatrónica más
+              moderno del país, considerado la cuna de la manufactura moderna en la República Dominicana. Este
+              logro consolidó al ITLA como una de las instituciones de educación tecnológica más importantes
+              de la región.
+            </p>
+
+            <p class="text-secondary" style="line-height: 1.8;">
+              El 18 de julio de 2006, mediante la resolución 05-2006 emitida por el Ministerio de Educación
+              Superior, Ciencia y Tecnología (MESCyT), el ITLA se convirtió en una Institución Técnica de
+              Educación Superior.
+            </p>
+
+            <p class="text-muted mb-0">
+              Desde entonces, la oferta académica ha crecido para responder a las demandas de la industria tecnológica.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <img src="img/impacto-social.jpeg" class="img-fluid history-img shadow-sm" alt="Impacto Social ITLA">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMACIÓN DIGITAL -->
+  <section class="container py-5">
+    <div class="row g-5 align-items-center">
+
+      <div class="col-lg-6">
+        <div class="history-card">
+          <span class="timeline-badge">Transformación Digital</span>
+
+          <h2 class="section-title">Innovación y Expansión</h2>
+
+          <p class="text-secondary" style="line-height: 1.8;">
+            Desde el año 2021, el ITLA ha enfocado sus esfuerzos en expandir su presencia a diversas regiones
+            del país, con el propósito de acercar la educación técnica superior y continuada a todos los ciudadanos
+            y contribuir a reducir la brecha digital en la República Dominicana.
+          </p>
+
+          <p class="text-secondary" style="line-height: 1.8;">
+            En la gestión actual, se ha creado el Innovation Solution Factory, un proyecto tecnológico e innovador
+            dedicado a impulsar la transformación digital en instituciones gubernamentales y del sector privado.
+          </p>
+
+          <p class="text-muted mb-0">
+            El ITLA se guía por los pilares de innovación y desarrollo, consolidándose como una academia tecnológica líder.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="p-5 text-white rounded shadow" style="background: linear-gradient(135deg, #001a33, #003366);">
+          <h3 class="fw-bold mb-4">ITLA en la actualidad</h3>
+          <ul class="lh-lg mb-0">
+            <li>Sede central en La Caleta.</li>
+            <li>Extensión en Santiago de los Caballeros.</li>
+            <li>Presencia en San Pedro de Macorís.</li>
+            <li>Presencia en Santo Domingo Este y Norte.</li>
+            <li>Presencia en Bonao, provincia Monseñor Nouel.</li>
+            <li>Programas orientados a tecnología, innovación y empleabilidad.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+
+        <div class="col-lg-3 border-end border-light border-opacity-25 pe-lg-5">
+          <img src="img/loguito.webp" alt="ITLA 25 Aniversario" class="img-fluid" style="max-height: 100px;">
+        </div>
+
+        <div class="col-lg-3">
+          <h6>Conócenos</h6>
+          <p>
+            El Instituto Tecnológico de las Américas (ITLA) es una institución educativa de la República Dominicana
+            que ofrece formación técnica y tecnológica en áreas como desarrollo de software, redes y mecatrónica.
+          </p>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Contáctanos</h6>
+          <ul class="list-unstyled">
+            <li>Tel: (809)-738-4852</li>
+            <li>Tel: (809)-793-2557</li>
+            <li>info@itla.edu.do</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Búscanos</h6>
+          <p>
+            Autopista Las Américas, Km. 27, PCSD, La Caleta, Boca Chica 11606, R.D.
+          </p>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Infórmate</h6>
+          <a href="#" class="d-block">Términos de Uso</a>
+          <a href="#" class="d-block">Política de Privacidad</a>
+          <a href="#" class="d-block">Preguntas Frecuentes</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- CERTIFICACIONES Y COPYRIGHT -->
+  <section class="py-4 border-top bg-white">
+    <div class="container">
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-8 text-center text-lg-start">
+          <img src="img/certificaciones.jpg" alt="Certificaciones" style="height: 80px;">
+        </div>
+
+        <div class="col-lg-4 text-center text-lg-end">
+          <img src="img/fondoagua.webp" alt="Logo institucional" style="max-height: 85px;">
+        </div>
+
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="small mb-0 text-secondary fw-bold">
+            © 2026 Todos los Derechos Reservados.
+          </p>
+        </div>
+
+        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+          <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 text-primary">
+            <span class="fw-bold small">SÍGUENOS</span>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-youtube"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

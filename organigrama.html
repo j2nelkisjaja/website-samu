@@ -1,0 +1,286 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Organigrama | ITLA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --itla-blue: #003366;
+      --itla-red: #cc0000;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .navbar {
+      border-bottom: 5px solid var(--itla-red);
+    }
+
+    .navbar-brand img {
+      height: 58px;
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #333 !important;
+      padding: 8px 10px !important;
+    }
+
+    .nav-link:hover {
+      color: var(--itla-red) !important;
+    }
+
+    .nav-link.active-page {
+      background-color: var(--itla-red);
+      color: white !important;
+      border-radius: 4px;
+    }
+
+    .page-header {
+      background: linear-gradient(90deg, #001a33 0%, #003366 100%);
+      color: white;
+      padding: 65px 0;
+      border-bottom: 6px solid var(--itla-red);
+    }
+
+    .section-title {
+      color: var(--itla-blue);
+      font-weight: bold;
+      border-left: 5px solid var(--itla-red);
+      padding-left: 15px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-size: 1.35rem;
+    }
+
+    .organigrama-box {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    }
+
+    .organigrama-img {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+    }
+
+    footer {
+      background-color: var(--itla-blue);
+      color: white;
+    }
+
+    footer h6 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    footer p,
+    footer a,
+    footer li {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-xl navbar-light bg-white sticky-top shadow-sm">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/itla logo.png" alt="Logo ITLA">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center align-items-xl-center">
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="quienes-somos.html">Quiénes Somos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="historia.html">Historia</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="admisiones.html">Admisiones</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="rectoria.html">Rectoría</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active-page" href="organigrama.html">Organigrama</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="becas.html">Becas</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="normativa-academica.html">Normativas Académicas</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="cafe-digital.html">Café Digital</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="fw-bold">Organigrama Institucional</h1>
+      <p class="lead mb-3">Estructura organizacional del Instituto Tecnológico de Las Américas.</p>
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+          </li>
+          <li class="breadcrumb-item active text-white-50">Organigrama</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="container py-5">
+    <div class="organigrama-box">
+
+      <h2 class="section-title">Organigrama ITLA</h2>
+
+      <p class="text-secondary mb-4" style="line-height: 1.8;">
+        En esta sección se presenta la estructura organizacional del Instituto Tecnológico de Las Américas,
+        donde se muestran las principales áreas, departamentos y unidades que forman parte de la institución.
+      </p>
+
+      <div class="text-center">
+        <img src="img/organigrama.jpeg" alt="Organigrama ITLA" class="organigrama-img img-fluid">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+
+        <div class="col-lg-3 border-end border-light border-opacity-25 pe-lg-5">
+          <img src="img/loguito.webp" alt="ITLA 25 Aniversario" class="img-fluid" style="max-height: 100px;">
+        </div>
+
+        <div class="col-lg-3">
+          <h6>Conócenos</h6>
+          <p>
+            El Instituto Tecnológico de las Américas (ITLA) es una institución educativa de la República Dominicana
+            que ofrece formación técnica y tecnológica en áreas como desarrollo de software, redes y mecatrónica.
+          </p>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Contáctanos</h6>
+          <ul class="list-unstyled">
+            <li>Tel: (809)-738-4852</li>
+            <li>Tel: (809)-793-2557</li>
+            <li>info@itla.edu.do</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Búscanos</h6>
+          <p>
+            Autopista Las Américas, Km. 27, PCSD, La Caleta, Boca Chica 11606, R.D.
+          </p>
+        </div>
+
+        <div class="col-lg-2">
+          <h6>Infórmate</h6>
+          <a href="#" class="d-block">Términos de Uso</a>
+          <a href="#" class="d-block">Política de Privacidad</a>
+          <a href="#" class="d-block">Preguntas Frecuentes</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- COPYRIGHT -->
+  <div class="container-fluid py-4 border-top bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-6 text-center text-md-start">
+          <p class="small mb-0 text-secondary fw-bold">
+            © 2026 Todos los Derechos Reservados.
+          </p>
+        </div>
+
+        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+          <div class="d-flex justify-content-center justify-content-md-end align-items-center gap-3 text-primary">
+            <span class="fw-bold small">SÍGUENOS</span>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-youtube"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
